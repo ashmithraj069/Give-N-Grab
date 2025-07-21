@@ -1,12 +1,36 @@
-# React + Vite
+-> packages
+npm create vite@latest
+npm install tailwindcss @tailwindcss/vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+->Features
+    *Login/Signup
+        =>Using google,Facebook
+    *Browse(after Login)
+        ->Home
+        ->Header
+            Logo,Grab,GrabbedItems,My Items,Logout,Search Bar(
+            - Food
+            -Dairy
+            -stationary
+            -Medical
+            -etc)
+        ->Footer
+            -Custom
+        ->Cards(contains Images,Title,grab:active/Inactive,Expiry Time,Grab Limit)
+            
+        ->button(Create Item)
+        
+        *Updates After the expiry time/ grabbing the Item
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+        *pick up spot
+        
+        *QR for verifing the grabber
 
-## Expanding the ESLint configuration
+        *Dark Mode
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+        *Leader board
+            - Top sharer
+        *Toast Notification
+        
+
