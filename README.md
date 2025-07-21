@@ -1,36 +1,66 @@
--> packages
+# 📦 Packages
+
+```bash
 npm create vite@latest
 npm install tailwindcss @tailwindcss/vite
 
 
-->Features
-    *Login/Signup
-        =>Using google,Facebook
-    *Browse(after Login)
-        ->Home
-        ->Header
-            Logo,Grab,GrabbedItems,My Items,Logout,Search Bar(
-            - Food
-            -Dairy
-            -stationary
-            -Medical
-            -etc)
-        ->Footer
-            -Custom
-        ->Cards(contains Images,Title,grab:active/Inactive,Expiry Time,Grab Limit)
-            
-        ->button(Create Item)
-        
-        *Updates After the expiry time/ grabbing the Item
+✨ Features
+🔐 Login/Signup
+Using Google, Facebook
 
-        *pick up spot
-        
-        *QR for verifing the grabber
+🔍 Browse (after Login)
+🏠 Home
+🧭 Header
+Logo
 
-        *Dark Mode
+Grab
 
-        *Leader board
-            - Top sharer
-        *Toast Notification
+Grabbed Items
+
+My Items
+
+Logout
+
+Search Bar (Filters):
+
+Food
+
+Dairy
+
+Stationary
+
+Medical
+
+etc.
+
+📄 Footer
+⚙️ Custom
+🗂️ Cards
+Contains:
+
+.Image
+
+.Title
+
+.Grab (Active/Inactive)
+
+.Expiry Time
+
+.Grab Limit
+
+➕ Create Item Button
+⏳ Updates
+Automatically updates after the expiry time or when an item is grabbed
+
+📍 Pickup Spot
+📷 QR Code
+For verifying the grabber
+
+🌙 Dark Mode
+🏆 Leaderboard
+Top Sharer
+
+🔔 Toast Notifications
         
 
