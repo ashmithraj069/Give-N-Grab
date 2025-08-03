@@ -3,7 +3,10 @@
 ```bash
 npm create vite@latest
 npm install tailwindcss @tailwindcss/vite
-
+npm install @reduxjs/toolkit react-redux
+npm install @appwrite.io/appwrite
+npm install react-router-dom
+npm install react-hook-form
 
 ✨ Features
 🔐 Login/Signup
