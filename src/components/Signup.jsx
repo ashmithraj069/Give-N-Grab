@@ -31,19 +31,35 @@ function Signup() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Logo in top-left */}
-      <div className="p-6">
-        <Logo className="w-16" />
-      </div>
+    <div className="min-h-screen py-4 bg-gray-50">
+      
+      
 
       {/* Signup box */}
       <div className="mx-auto w-full max-w-lg bg-white rounded-xl p-10 border border-gray-200 shadow-md">
-        <h2 className="text-center text-3xl font-bold mb-6">Sign up</h2>
+      
+        <h2 className="relative flex items-center mb-6 text-3xl font-bold">
+  
+  <Logo className="w-12 h-12" />
+
+  
+  <span className="absolute left-1/2 -translate-x-1/2">Sign up</span>
+</h2>
+
+
 
         {error && <p className="text-red-500 text-center">{error}</p>}
 
         <form onSubmit={handleSubmit(create)} className="space-y-4">
+          <div>
+            <label htmlFor="text" className="block font-medium">UserName</label>
+            <input
+              type="text"
+              id="userName"
+              {...register("userName", { required: true })}
+              className="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
           <div>
             <label htmlFor="email" className="block font-medium">Email</label>
             <input
@@ -72,11 +88,11 @@ function Signup() {
             <hr className="flex-1 border-gray-300" />
           </div>
 
-          <Button type="button" onClick={() => authService.GoogleLogin()} className="w-full">
+          <Button type="button"  onClick={() => authService.GoogleLogin()} className="w-full cursor-pointer">
             Continue with Google
           </Button>
 
-          <Button type="button" onClick={() => authService.GithubLogin()} className="w-full">
+          <Button type="button" onClick={() => authService.GithubLogin()} className="w-full cursor-pointer">
             Continue with GitHub
           </Button>
         </form>
