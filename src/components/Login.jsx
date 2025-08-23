@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { Link,NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import authService from '../appwrite/auth'

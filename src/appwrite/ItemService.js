@@ -11,13 +11,15 @@ export class ItemService {
     this.database = new Databases(this.client)
     this.bucket = new Storage(this.client); 
   }
-  async createItem({ title, description, imageUrl, category, quantity = 1}) {
+  async createItem({ title, description, featuredImage, category, quantity = 1 }) {
   try {
     const user = await this.account.get();
     const userId = user.$id;
+    const userName = user.name || user.email.split("@")[0]; 
+    const userPic = user.prefs?.profilePic || null; 
     const createdAt = new Date().toISOString();
     const isActive = true;
-    const status = "active";
+    const status = "active";  
 
     return await this.database.createDocument(
       conf.appwriteDatabaseId,
@@ -26,10 +28,12 @@ export class ItemService {
       {
         title,
         description,
-        imageUrl,
+        featuredImage,
         category,
         quantity,
         userId,
+        userName,
+        userPic,
         createdAt,
         isActive,
         status
@@ -40,8 +44,10 @@ export class ItemService {
     throw new Error("Failed to create item. Please try again later.");
   }
 }
+
+
   // update and delete item methods
-  async updateItem(itemId,{title,description,imageUrl}){
+  async updateItem(itemId,{title,description,featuredImage}){
     try {
       return await this.database.updateDocument(
         conf.appwriteDatabaseId,
@@ -49,7 +55,7 @@ export class ItemService {
         itemId,
         { title, 
           description,
-          imageUrl }
+          featuredImage }
       ) 
     } catch (error) {
       console.error("updateItem error:", error);
@@ -72,7 +78,7 @@ export class ItemService {
   try {
     const finalQueries = [
       Query.equal('status', 'active'),
-      ...queries, // allows caller to pass additional filters
+      ...queries, 
     ];
 
     const response = await this.database.listDocuments(

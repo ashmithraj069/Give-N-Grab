@@ -10,13 +10,13 @@ export class RequestService {
     this.database = new Databases(this.client)
     this.bucket = new Storage(this.client);
   }
-  async createRequest({ itemId, itemTitle, itemImageUrl, sharerId }) {
+  async createRequest({ itemId, itemTitle, featuredImage, sharerId }) {
   try {
     const user = await this.account.get();
     const grabberId = user.$id;
     const createdAt = new Date().toISOString();
     const status = "pending";
-
+    
     return await this.database.createDocument(
       Conf.appwriteDatabaseId,
       Conf.appwriteRequestsCollectionId,
@@ -24,7 +24,7 @@ export class RequestService {
       {
         itemId,
         itemTitle,
-        itemImageUrl,
+        featuredImage,
         sharerId,
         grabberId,
         createdAt,

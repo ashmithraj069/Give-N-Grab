@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import Login from './components/Signup.jsx'
 import Signup from './components/Signup.jsx'
+import{Profile} from './components/profile/index.js'
+import ShareItem from './components/services/ShareItem.jsx'
+
 const router = createBrowserRouter([
   {
     path:'/',
@@ -19,6 +22,14 @@ const router = createBrowserRouter([
       {
             path: "/Login",
             element: <Login />,
+        },
+        {
+          path: "/Profile",
+          element: <Profile />,
+        },
+        {
+          path: "/Share-Item",
+          element: <ShareItem />,
         },
         
     ]

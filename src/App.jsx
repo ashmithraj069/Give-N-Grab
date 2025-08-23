@@ -26,8 +26,10 @@ function App() {
 
    return (
     <>
-    <Header/>
-    <h1>Hello World</h1>
+    <Header />
+    <main className="min-h-[calc(100vh-4rem)]">
+      <Outlet />
+    </main>
     </>
    )
   

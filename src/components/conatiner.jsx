@@ -1,6 +1,6 @@
 function Container({children, className}) {
   return (
-    <div className={`w-full max-w-7xl mx-auto ${className}`}>
+    <div className={` ${className}`}>
       {children}
     </div>
   )

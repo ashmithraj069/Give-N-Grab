@@ -1,13 +1,16 @@
 import React from 'react'
+import { useId } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import{Button, Logo, Container,UserPic} from '../index'
+import{Profile} from '../profile/index'
 import { Link } from 'react-router-dom'
 
 function Header() {
+  const id = useId()
 const navigate = useNavigate()
 if(!useSelector((state)=>state.auth.userData)){
-  navigate('/Login')
+  // navigate('/Login')
 }
 const navList = [{
     name: "Home",
@@ -21,7 +24,7 @@ const navList = [{
 
   return (
   <header className="bg-white shadow-md sticky top-0 z-50">
-    <Container className="px-0">   
+    <Container className="px-6">   
       <nav className="flex items-center justify-between py-4">
         
         
@@ -31,8 +34,6 @@ const navList = [{
             GiveNGrab
           </h1>
         </Link>
-        
-        {/* Right - Nav + UserPic */}
         <div className="flex items-center gap-6">
           <ul className="flex items-center gap-6">
             {navList.map((list) => (
@@ -44,8 +45,8 @@ const navList = [{
             ))}
           </ul>
 
-          <Link to="/Profile">
-            <UserPic />
+          <Link to="/Profile" className=' cursor-pointer'>
+            <Profile />
           </Link>
         </div>
       </nav>
